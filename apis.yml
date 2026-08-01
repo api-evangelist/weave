@@ -1,7 +1,30 @@
 aid: weave
 name: Weave
-description: Weave is a company surfaced as a portfolio company of y-combinator and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Weave (Weave Communications, Inc., NYSE: WEAV) is an all-in-one customer
+  communication and payments platform built for small and medium healthcare and
+  services businesses — dental, optometry, veterinary, medical, and beyond. Weave
+  brings together a cloud phone system (VoIP), two-way text messaging, appointment
+  scheduling and reminders, online reviews, forms, and integrated payments so
+  practices can automate front-office work, keep schedules full, get paid faster,
+  and collect more reviews. For developers, Weave runs a Developer Platform at
+  dp.getweave.com backed by an OpenID Connect / OAuth 2.0 authorization server
+  (api.weaveconnect.com) that lets partners build apps and integrations against
+  Weave data and events. A Y Combinator company (W14), Weave is HIPAA compliant
+  and maintains ISO 27001 and SOC 2 Type 2 attestations.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://dp.getweave.com/weave-favicon.svg
 url: https://raw.githubusercontent.com/api-evangelist/weave/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +34,92 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Communication
+- Messaging
+- Payments
+- Healthcare
+- VoIP
+- Telephony
+- Reviews
+- Scheduling
+- SMB
+- Developer Platform
+- OAuth
+apis:
+- name: Weave Platform API
+  description: >-
+    Weave's developer platform API for building apps and integrations against
+    Weave communication, scheduling, and payments data. Authorized via OpenID
+    Connect / OAuth 2.0 (authorization_code + client_credentials) at
+    oidc.weaveconnect.com; API served from api.weaveconnect.com.
+  humanURL: https://dp.getweave.com/docs
+  baseURL: https://api.weaveconnect.com
+  properties:
+  - type: Authentication
+    url: authentication/weave-authentication.yml
+  - type: OAuthScopes
+    url: scopes/weave-scopes.yml
+  - type: WellKnown
+    url: well-known/weave-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: TrustCenter
+  url: security/weave-trust-center.yml
+- type: DomainSecurity
+  url: security/weave-domain-security.yml
+- type: Website
+  url: https://www.getweave.com/
+- type: DeveloperPortal
+  url: https://dp.getweave.com/
+- type: Documentation
+  url: https://dp.getweave.com/docs
+- type: SignUp
+  url: https://www.getweave.com/demo/
+- type: Login
+  url: https://app.getweave.com/
+- type: Pricing
+  url: https://www.getweave.com/pricing/
+- type: TermsOfService
+  url: https://www.getweave.com/legal/terms/
+- type: PrivacyPolicy
+  url: https://www.getweave.com/legal/privacy/
+- type: Support
+  url: https://www.weavehelp.com/weavehelp/
+- type: Blog
+  url: https://www.getweave.com/resource-center/
+- type: GitHubOrganization
+  url: https://github.com/weave-lab
+- type: StatusPage
+  url: https://status.getweave.com/
+- type: Security
+  url: https://www.getweave.com/security/
+- type: Compliance
+  url: https://www.getweave.com/security/
+- type: Authentication
+  url: authentication/weave-authentication.yml
+- type: OAuthScopes
+  url: scopes/weave-scopes.yml
+- type: WellKnown
+  url: well-known/weave-well-known.yml
+- type: SecurityTxt
+  url: well-known/weave-security.txt
+- type: VulnerabilityDisclosure
+  url: security/weave-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/weave-conformance.yml
+- type: Lifecycle
+  url: lifecycle/weave-lifecycle.yml
+- type: LLMsTxt
+  url: llms/weave-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

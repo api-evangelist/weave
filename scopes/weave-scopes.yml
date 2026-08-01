@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://oidc.weaveconnect.com/.well-known/openid-configuration
+docs: https://dp.getweave.com/docs
+schemes:
+- name: WeaveOIDC
+  source: well-known/weave-openid-configuration.json
+  type: openIdConnect
+  authorizationUrl: https://oidc.weaveconnect.com/oauth2/auth
+  tokenUrl: https://oidc.weaveconnect.com/oauth2/token
+scopes:
+- scope: openid
+  description: >-
+    OpenID Connect authentication; returns an ID token identifying the
+    authenticated Weave user.
+  flows:
+  - authorizationCode
+  - implicit
+  sources:
+  - well-known/weave-openid-configuration.json
+- scope: offline_access
+  description: >-
+    Request a refresh token so the app can obtain new access tokens without
+    re-prompting the user (OIDC offline access).
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/weave-openid-configuration.json
+- scope: offline
+  description: >-
+    Legacy offline-access alias advertised by the Weave authorization server for
+    long-lived refresh-token grants.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/weave-openid-configuration.json
+notes: >-
+  These are the scopes advertised by the Weave OIDC discovery document
+  (scopes_supported). Weave does not publish a granular resource:action
+  permission catalog on its public discovery surface; per-app data permissions
+  are configured in the Weave Developer Portal rather than encoded as OAuth
+  scopes. No spec-derived scopes exist because Weave publishes no public OpenAPI.

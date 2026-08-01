@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: live /.well-known probes of Weave hosts
+documents:
+- host: https://oidc.weaveconnect.com
+  path: /.well-known/openid-configuration
+  status: 200
+  file: weave-openid-configuration.json
+  note: OpenID Connect discovery (Ory Hydra) for the Weave developer platform
+- host: https://www.getweave.com
+  path: /.well-known/security.txt
+  status: 200
+  file: weave-security.txt
+  note: RFC 9116 security contact (Expires 2025-05-01; expired but published)
+- host: https://api.weaveconnect.com
+  path: /.well-known/openid-configuration
+  status: 401
+- host: https://api.weaveconnect.com
+  path: /.well-known/oauth-authorization-server
+  status: 401
+- host: https://oidc.weaveconnect.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+- host: https://www.getweave.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+- host: https://www.getweave.com
+  path: /.well-known/api-catalog
+  status: 404

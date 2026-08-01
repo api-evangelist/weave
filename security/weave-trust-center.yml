@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://trust.getweave.com/
+url: https://trust.getweave.com/
+certifications:
+- HIPAA
+- ISO 27001
+- SOC 2 Type 2
+evidence:
+- source: https://trust.getweave.com/
+  keywords:
+  - trust center
+  - compliance certification
+- source: https://www.getweave.com/security/
+  certifications:
+  - HIPAA
+  - ISO 27001
+  - SOC 2 Type 2
+  quote: >-
+    security, privacy, and compliance controls, including ISO 27001 and SOC2
+    Type 2 assessments; Weave is committed to protecting Protected Health
+    Information in compliance with HIPAA.

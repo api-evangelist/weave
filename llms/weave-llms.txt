@@ -1,0 +1,38 @@
+# Weave
+
+> Weave (Weave Communications, Inc., NYSE: WEAV) is an all-in-one customer communication and payments platform for small and medium healthcare and services businesses (dental, optometry, veterinary, medical). It combines a cloud phone system (VoIP), two-way texting, scheduling, reviews, forms, and integrated payments. Developers build apps against Weave via a Developer Platform (dp.getweave.com) authorized with OpenID Connect / OAuth 2.0 (api.weaveconnect.com). Y Combinator (W14); HIPAA, ISO 27001, and SOC 2 Type 2 compliant.
+
+## Platform
+- [Website](https://www.getweave.com/)
+- [Developer Portal](https://dp.getweave.com/)
+- [Developer Documentation](https://dp.getweave.com/docs)
+- [Pricing](https://www.getweave.com/pricing/)
+- [Status Page](https://status.getweave.com/)
+- [GitHub (weave-lab)](https://github.com/weave-lab)
+
+## API
+- Base URL: https://api.weaveconnect.com
+- Auth: OpenID Connect / OAuth 2.0 (authorization_code + PKCE, client_credentials) at https://oidc.weaveconnect.com
+
+## Auth & Discovery
+- [OIDC discovery](https://oidc.weaveconnect.com/.well-known/openid-configuration)
+- [Authentication profile](authentication/weave-authentication.yml)
+- [OAuth scopes](scopes/weave-scopes.yml)
+- [Well-known index](well-known/weave-well-known.yml)
+
+## Security & Compliance
+- [security.txt](well-known/weave-security.txt)
+- [Security policy](https://www.getweave.com/security/)
+- [Trust center](https://trust.getweave.com/)
+- [Vulnerability disclosure](security/weave-vulnerability-disclosure.yml)
+- [Domain security](security/weave-domain-security.yml)
+- [Conformance](conformance/weave-conformance.yml)
+- Certifications: HIPAA, ISO 27001, SOC 2 Type 2
+
+## Legal
+- [Terms of Service](https://www.getweave.com/legal/terms/)
+- [Privacy Policy](https://www.getweave.com/legal/privacy/)
+
+## Support
+- [Help Center](https://www.weavehelp.com/weavehelp/)
+- [Resource Center](https://www.getweave.com/resource-center/)

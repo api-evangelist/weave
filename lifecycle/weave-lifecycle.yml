@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://status.getweave.com/ ; https://dp.getweave.com/ ;
+  API host path inspection (api.weaveconnect.com)
+versioning:
+  scheme: uri-path
+  observed:
+  - v1
+  - v2
+  note: >-
+    Weave's platform API is served from api.weaveconnect.com with versioned
+    URI-path prefixes (/v1, /v2 observed on the developer platform and client
+    manager, e.g. wss://api.weaveconnect.com/v2/client-manager/ws).
+status_page: https://status.getweave.com/
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No public deprecation/sunset policy located.
+sla:
+  url: null
+deprecated_operations: []
