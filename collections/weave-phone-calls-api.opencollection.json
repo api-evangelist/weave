@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weave Contacts Phone & Calls API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://auth.weaveconnect.com/oauth2/default/v1/authorize",
+      "accessTokenUrl": "https://auth.weaveconnect.com/oauth2/default/v1/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Phone & Calls",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List call records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/call-records",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              }
+            ]
+          },
+          "docs": "Lists inbound and outbound call records for a location."
+        },
+        {
+          "info": {
+            "name": "List call recordings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/call-recordings",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists available call recordings for a location."
+        },
+        {
+          "info": {
+            "name": "Get a call recording signed URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/call-recording/signed-url",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "recording_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a short-lived signed URL to download a specific call recording."
+        },
+        {
+          "info": {
+            "name": "List voicemail messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/voicemail-messages",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists voicemail messages for a location."
+        },
+        {
+          "info": {
+            "name": "List call queues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/call-queues",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists the call queues configured for a location."
+        },
+        {
+          "info": {
+            "name": "Get call queue metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/call-queues/metrics",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Returns performance metrics for the location's call queues."
+        },
+        {
+          "info": {
+            "name": "List department phone numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/department/phone-numbers",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists phone numbers assigned to departments within a location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

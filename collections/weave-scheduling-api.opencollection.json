@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weave Contacts Scheduling API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://auth.weaveconnect.com/oauth2/default/v1/authorize",
+      "accessTokenUrl": "https://auth.weaveconnect.com/oauth2/default/v1/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scheduling",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List appointments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/api/v2/appointments",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists appointments for a location within an optional date range."
+        },
+        {
+          "info": {
+            "name": "List appointment types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/api/v2/appointment-types",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists the appointment types configured for a location."
+        },
+        {
+          "info": {
+            "name": "List schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v3/schedules",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists provider/operatory schedules available for online booking."
+        },
+        {
+          "info": {
+            "name": "List calendar events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v3/calendars/events",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists calendar events for a location."
+        },
+        {
+          "info": {
+            "name": "Submit an online booking request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/api/v2/booking/email-request",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submits an online booking (appointment request) to the practice."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

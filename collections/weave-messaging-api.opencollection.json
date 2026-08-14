@@ -1,0 +1,188 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weave Contacts Messaging API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://auth.weaveconnect.com/oauth2/default/v1/authorize",
+      "accessTokenUrl": "https://auth.weaveconnect.com/oauth2/default/v1/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messaging",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/messages",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter to messages exchanged with a specific contact."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              }
+            ]
+          },
+          "docs": "Lists SMS/text messages for a location, most recent first."
+        },
+        {
+          "info": {
+            "name": "Send a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/v1/messages",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends an SMS/text message from the location to a patient."
+        },
+        {
+          "info": {
+            "name": "List chart-thread messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/chart-messages",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists messages within a patient chart/message thread."
+        },
+        {
+          "info": {
+            "name": "Get bulk-message quota",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/account/bulk-message-quota",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Returns the remaining bulk (mass-text) message quota for the account."
+        },
+        {
+          "info": {
+            "name": "List SMS phone numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/sms-phone-numbers",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Lists the SMS-capable phone numbers configured for the location."
+        },
+        {
+          "info": {
+            "name": "Send a Quick Fill message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/api/v2/quick-fill/message/send",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Texts an open-appointment (Quick Fill) offer to one or more contacts to fill a newly available slot."
+        },
+        {
+          "info": {
+            "name": "Get Quick Fill message history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/api/v2/quick-fill/message/history",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ]
+          },
+          "docs": "Returns the history of Quick Fill messages sent from the location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

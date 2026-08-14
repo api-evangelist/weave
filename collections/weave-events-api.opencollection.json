@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weave Contacts Events API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://auth.weaveconnect.com/oauth2/default/v1/authorize",
+      "accessTokenUrl": "https://auth.weaveconnect.com/oauth2/default/v1/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weaveconnect.com/v1/events",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              }
+            ]
+          },
+          "docs": "Lists platform events (calls, messages, appointments, payments, forms) for a location."
+        },
+        {
+          "info": {
+            "name": "Subscribe to an event stream",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/v1/subscribe",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Subscribes a client to a single event stream/topic."
+        },
+        {
+          "info": {
+            "name": "Subscribe to multiple event streams",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/v1/subscribe/multi",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Subscribes a client to multiple event streams/topics at once."
+        },
+        {
+          "info": {
+            "name": "Unsubscribe from an event stream",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.weaveconnect.com/v1/unsubscribe",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query",
+                "description": "The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Unsubscribes a client from an event stream/topic."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
