@@ -34,6 +34,19 @@ created: '2026-07-17'
 modified: '2026-07-21'
 tags:
 - Company
+- Communications
+- Messaging
+- Payments
+- Healthcare
+- VoIP
+- Telephony
+- Reviews
+- Scheduling
+- SMB
+- Developer Platform
+- Authentication
+tags_raw:
+- Company
 - Communication
 - Messaging
 - Payments
@@ -85,6 +98,8 @@ apis:
   humanURL: https://dp.getweave.com
   baseURL: https://api.weaveconnect.com
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
