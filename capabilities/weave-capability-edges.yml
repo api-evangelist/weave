@@ -3,7 +3,7 @@ provider: Weave
 generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
-- Healthcare Providers
+- Telecommunications
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,48 +11,25 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 4
+edge_count: 2
 edges:
-- tag: Scheduling
-  spec_file: weave-scheduling-api-openapi.yml
-  capability_id: BC-2800.10
-  capability_id_l1: BC-2800
-  capability_name: Scheduling & Appointment Management
-  confidence: 0.9
-  evidence: GET /api/v2/appointments  List appointments; GET /api/v2/appointment-types; POST /api/v2/booking/email-request  Submit
-    an online booking request
-  reason: Appointments, appointment types, provider schedules and online booking requests for healthcare
-    practices — directly appointment/scheduling management in patient access.
-- tag: Messaging
-  spec_file: weave-messaging-api-openapi.yml
-  capability_id: BC-2910.10
-  capability_id_l1: BC-2910
-  capability_name: Patient Engagement & Communication
-  confidence: 0.75
-  evidence: POST /v1/messages  Send a message; POST /api/v2/quick-fill/message/send  Send a Quick Fill
-    message
-  reason: Two-way SMS to patients of dental/optometry/medical practices, including quick-fill outreach
-    to fill open appointment slots — multi-channel patient communication. Some overlap with generic customer
-    engagement, but the vendor context is explicitly patient communication for healthcare practices.
-- tag: Contacts
-  spec_file: weave-contacts-api-openapi.yml
-  capability_id: BC-420.10
-  capability_id_l1: BC-420
-  capability_name: Customer Data Management
-  confidence: 0.7
-  evidence: GET /v1/contacts 'List contacts', POST /v1/contacts/search 'Search contacts', POST /v1/contacts/block
-    'Block a contact'; schema Contact
-  reason: CRUD-style listing, searching and block/unblock of the practice's contact records within a communications
-    platform. This is maintenance of the customer/contact master used for messaging, i.e. customer data
-    management, rather than clinical patient registration — no demographic, consent or encounter semantics
-    are exposed.
 - tag: Phone & Calls
   spec_file: weave-phone-calls-api-openapi.yml
   capability_id: BC-430.30
   capability_id_l1: BC-430
   capability_name: Contact Centre Operations Management
-  confidence: 0.7
-  evidence: GET /v1/call-queues  List call queues; GET /v1/call-queues/metrics  Get call queue metrics;
+  confidence: 0.75
+  evidence: GET /v1/call-queues listCallQueues; GET /v1/call-queues/metrics getCallQueueMetrics; GET /v1/call-recordings;
     GET /v1/voicemail-messages
-  reason: Cloud VoIP telephony operations — call records, recordings, voicemail, queues and queue metrics
-    — which is contact-centre/telephony operations rather than a clinical capability.
+  reason: Call records, recordings, voicemail, call queues and queue metrics are the operational surface
+    of a business phone/contact-centre system, matching Contact Centre Operations Management (telephony).
+- tag: Contacts
+  spec_file: weave-contacts-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.72
+  evidence: GET /v1/contacts 'List contacts'; POST /v1/contacts/search 'Search contacts'; POST /v1/contacts/block
+    'Block a contact'; schema 'Contact'
+  reason: CRUD-style stewardship of the practice's customer/patient contact records including search and
+    block-list state — customer master data management within a customer communication platform.
