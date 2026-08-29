@@ -252,6 +252,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/weave-capability-edges.yml
+  name: Weave Business Capability Map
 - type: TrustCenter
   url: security/weave-trust-center.yml
 - type: DomainSecurity
