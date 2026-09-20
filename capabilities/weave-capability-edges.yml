@@ -11,8 +11,31 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 2
+edge_count: 4
 edges:
+- tag: Scheduling
+  spec_file: weave-scheduling-api-openapi.yml
+  capability_id: BC-2800.10
+  capability_id_l1: BC-2800
+  capability_name: Scheduling & Appointment Management
+  confidence: 0.92
+  evidence: GET /api/v2/appointments 'List appointments'; GET /api/v2/appointment-types; POST /api/v2/booking/email-request
+    'Submit an online booking request'
+  reason: Surface is appointment listing, appointment types, schedules/calendars and online booking requests
+    for healthcare practices — squarely appointment scheduling and booking within patient access.
+  recovered_from: vertical-healthcare-providers-edges.json
+- tag: Messaging
+  spec_file: weave-messaging-api-openapi.yml
+  capability_id: BC-2910.10
+  capability_id_l1: BC-2910
+  capability_name: Patient Engagement & Communication
+  confidence: 0.75
+  evidence: POST /v1/messages  Send a message; POST /api/v2/quick-fill/message/send  Send a Quick Fill
+    message
+  reason: Two-way SMS to patients of dental/optometry/medical practices, including quick-fill outreach
+    to fill open appointment slots — multi-channel patient communication. Some overlap with generic customer
+    engagement, but the vendor context is explicitly patient communication for healthcare practices.
+  recovered_from: healthcare-vertical-edges.json
 - tag: Phone & Calls
   spec_file: weave-phone-calls-api-openapi.yml
   capability_id: BC-430.30
