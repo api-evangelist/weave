@@ -1,13 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Weave Contacts Phone & Calls API
-  description: 'The Weave API is the developer surface of the Weave customer/patient communication and payments platform for small healthcare businesses (dental, optometry, veterinary, medical, and specialty practices). It exposes REST resources across messaging (SMS/text), phone and calls, contacts, scheduling and appointments, payments, digital forms, reviews, and event subscriptions.
-
-
-    Base URL is https://api.weaveconnect.com. Requests are authenticated with an OAuth 2.0 bearer access token issued by Weave''s OIDC provider (https://oidc.weaveconnect.com, token endpoint under https://auth.weaveconnect.com/oauth2/default) and are scoped to a location (sub-account); the location is identified by a `location_id` query parameter or header on most endpoints.
-
-
-    Grounding note: the public Weave Developer Portal (https://dp.getweave.com) requires a developer login, so the authoritative request/response schemas could not be read directly. The paths and base URL below are grounded in Weave''s own published Developer Portal client (the app''s compiled configuration and API calls against https://api.weaveconnect.com). Path coverage is therefore high-confidence, while request bodies, query parameters, and response schemas are modeled and should be reconciled against the official reference once portal access is available.'
+  title: Weave Phone & Calls API
+  description: The Weave API is the developer surface of the Weave customer/patient communication and payments platform for small healthcare businesses (dental, optometry, veterinary, medical, and specialty practices).
   version: '1.0'
   contact:
     name: Weave
@@ -195,15 +189,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    PhoneNumber:
-      type: object
-      properties:
-        id:
-          type: string
-        number:
-          type: string
-        label:
-          type: string
     CallRecord:
       type: object
       properties:
@@ -224,20 +209,6 @@ components:
         person_id:
           type: string
         started_at:
-          type: string
-          format: date-time
-    CallRecording:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        call_record_id:
-          type: string
-          format: uuid
-        duration_seconds:
-          type: integer
-        created_at:
           type: string
           format: date-time
     Error:
@@ -265,6 +236,29 @@ components:
         created_at:
           type: string
           format: date-time
+    CallRecording:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        call_record_id:
+          type: string
+          format: uuid
+        duration_seconds:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        label:
+          type: string
   responses:
     Unauthorized:
       description: Missing or invalid access token.
@@ -279,14 +273,6 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return.
-      schema:
-        type: integer
-        default: 50
     LocationId:
       name: location_id
       in: query
@@ -295,6 +281,14 @@ components:
       schema:
         type: string
         format: uuid
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return.
+      schema:
+        type: integer
+        default: 50
   securitySchemes:
     oauth2:
       type: oauth2

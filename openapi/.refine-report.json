@@ -1,0 +1,34 @@
+{
+  "provider": "weave",
+  "sources": [
+    "_original/weave-openapi.yml"
+  ],
+  "outputs": [
+    "weave-contacts-api-openapi.yml",
+    "weave-events-api-openapi.yml",
+    "weave-forms-api-openapi.yml",
+    "weave-messaging-api-openapi.yml",
+    "weave-payments-api-openapi.yml",
+    "weave-phone-calls-api-openapi.yml",
+    "weave-reviews-api-openapi.yml",
+    "weave-scheduling-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "weave-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "weave-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-messaging-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-phone-calls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-reviews-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "weave-scheduling-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}
