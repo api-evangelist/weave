@@ -189,6 +189,54 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    Voicemail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        from:
+          type: string
+        duration_seconds:
+          type: integer
+        viewed:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        label:
+          type: string
+    CallRecording:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        call_record_id:
+          type: string
+          format: uuid
+        duration_seconds:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
     CallRecord:
       type: object
       properties:
@@ -211,63 +259,15 @@ components:
         started_at:
           type: string
           format: date-time
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-    Voicemail:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        from:
-          type: string
-        duration_seconds:
-          type: integer
-        viewed:
-          type: boolean
-        created_at:
-          type: string
-          format: date-time
-    CallRecording:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        call_record_id:
-          type: string
-          format: uuid
-        duration_seconds:
-          type: integer
-        created_at:
-          type: string
-          format: date-time
-    PhoneNumber:
-      type: object
-      properties:
-        id:
-          type: string
-        number:
-          type: string
-        label:
-          type: string
   responses:
-    Unauthorized:
-      description: Missing or invalid access token.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
+    Unauthorized:
+      description: Missing or invalid access token.
       content:
         application/json:
           schema:

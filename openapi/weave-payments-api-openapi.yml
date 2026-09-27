@@ -66,23 +66,17 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid access token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-  parameters:
-    LocationId:
-      name: location_id
-      in: query
-      required: false
-      description: The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header.
-      schema:
-        type: string
-        format: uuid
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
     PaymentMethod:
       type: object
       properties:
@@ -100,16 +94,22 @@ components:
           type: integer
         exp_year:
           type: integer
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
+  parameters:
+    LocationId:
+      name: location_id
+      in: query
+      required: false
+      description: The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header.
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     oauth2:
       type: oauth2
