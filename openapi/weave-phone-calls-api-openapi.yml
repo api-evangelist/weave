@@ -189,21 +189,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Voicemail:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        from:
-          type: string
-        duration_seconds:
-          type: integer
-        viewed:
-          type: boolean
-        created_at:
-          type: string
-          format: date-time
     Error:
       type: object
       properties:
@@ -214,15 +199,6 @@ components:
               type: string
             message:
               type: string
-    PhoneNumber:
-      type: object
-      properties:
-        id:
-          type: string
-        number:
-          type: string
-        label:
-          type: string
     CallRecording:
       type: object
       properties:
@@ -237,6 +213,15 @@ components:
         created_at:
           type: string
           format: date-time
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        label:
+          type: string
     CallRecord:
       type: object
       properties:
@@ -259,6 +244,38 @@ components:
         started_at:
           type: string
           format: date-time
+    Voicemail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        from:
+          type: string
+        duration_seconds:
+          type: integer
+        viewed:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return.
+      schema:
+        type: integer
+        default: 50
+    LocationId:
+      name: location_id
+      in: query
+      required: false
+      description: The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header.
+      schema:
+        type: string
+        format: uuid
   responses:
     NotFound:
       description: The requested resource was not found.
@@ -272,23 +289,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-  parameters:
-    LocationId:
-      name: location_id
-      in: query
-      required: false
-      description: The Weave location (sub-account) the request is scoped to. Required on most endpoints; may alternatively be supplied via a location header.
-      schema:
-        type: string
-        format: uuid
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return.
-      schema:
-        type: integer
-        default: 50
   securitySchemes:
     oauth2:
       type: oauth2
