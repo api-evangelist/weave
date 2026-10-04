@@ -207,16 +207,21 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Error:
+    MessageInput:
       type: object
+      required:
+      - person_id
+      - body
       properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
+        person_id:
+          type: string
+        body:
+          type: string
+        media_urls:
+          type: array
+          items:
+            type: string
+            format: uri
     PhoneNumber:
       type: object
       properties:
@@ -250,34 +255,16 @@ components:
         created_at:
           type: string
           format: date-time
-    MessageInput:
+    Error:
       type: object
-      required:
-      - person_id
-      - body
       properties:
-        person_id:
-          type: string
-        body:
-          type: string
-        media_urls:
-          type: array
-          items:
-            type: string
-            format: uri
-  responses:
-    ValidationError:
-      description: The request payload failed validation.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid access token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
   parameters:
     LocationId:
       name: location_id
@@ -295,6 +282,19 @@ components:
       schema:
         type: integer
         default: 50
+  responses:
+    ValidationError:
+      description: The request payload failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     oauth2:
       type: oauth2
