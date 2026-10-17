@@ -189,6 +189,25 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        label:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
     CallRecording:
       type: object
       properties:
@@ -203,15 +222,21 @@ components:
         created_at:
           type: string
           format: date-time
-    PhoneNumber:
+    Voicemail:
       type: object
       properties:
         id:
           type: string
-        number:
+          format: uuid
+        from:
           type: string
-        label:
+        duration_seconds:
+          type: integer
+        viewed:
+          type: boolean
+        created_at:
           type: string
+          format: date-time
     CallRecord:
       type: object
       properties:
@@ -234,40 +259,15 @@ components:
         started_at:
           type: string
           format: date-time
-    Voicemail:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        from:
-          type: string
-        duration_seconds:
-          type: integer
-        viewed:
-          type: boolean
-        created_at:
-          type: string
-          format: date-time
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
   responses:
-    Unauthorized:
-      description: Missing or invalid access token.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
+    Unauthorized:
+      description: Missing or invalid access token.
       content:
         application/json:
           schema:

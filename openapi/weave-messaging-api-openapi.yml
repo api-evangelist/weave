@@ -207,6 +207,15 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        label:
+          type: string
     MessageInput:
       type: object
       required:
@@ -222,15 +231,6 @@ components:
           items:
             type: string
             format: uri
-    PhoneNumber:
-      type: object
-      properties:
-        id:
-          type: string
-        number:
-          type: string
-        label:
-          type: string
     Message:
       type: object
       properties:
