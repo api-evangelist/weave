@@ -64,6 +64,150 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Weave is a company surfaced as a portfolio company of y-combinator and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Weave (Weave Communications, Inc., NYSE: WEAV) is an all-in-one customer communication and payments platform built for small and medium healthcare and services businesses — dental, optometry, veterinary, medical, and beyond. Weave brings together a cloud phone system (VoIP), two-way text messaging, appointment scheduling and reminders, online reviews, forms, and integrated payments so practices can automate front-office work, keep schedules full, get paid faster, and collect more reviews. For developers, Weave runs a Developer Platform at dp.getweave.com backed by an OpenID Connect / OAuth 2.0 authorization server (api.weaveconnect.com) that lets partners build apps and integrations against Weave data and events. A Y Combinator company (W14), Weave is HIPAA compliant and maintains ISO 27001 and SOC 2 Type 2 attestations.
 
-Backed by: y-combinator
+**Areas:** Company · Communications · Messaging · Payments · Healthcare · VoIP · Telephony · Reviews · Scheduling · Small Business · Developer Platform · Authentication
+
+## Weave on APIs.io
+
+Everything profiled for Weave is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/weave/](https://apis.io/providers/weave/)** — or go straight to one of the APIs or properties below.
+
+### APIs (9)
+
+- [Weave Platform API](https://apis.io/apis/weave/weave-platform-api/) — Weave's developer platform API for building apps and integrations against Weave communication, scheduling, and payments data. Authorized via OpenID Connect…
+- [Weave Contacts API](https://apis.io/apis/weave/weave-hq-contacts-api/) — Patient/customer contacts and contact info.
+- [Weave Events API](https://apis.io/apis/weave/weave-hq-events-api/) — Platform events and subscription management.
+- [Weave Forms API](https://apis.io/apis/weave/weave-hq-forms-api/) — Weave Digital Forms - templates, links, and submissions.
+- [Weave Messaging API](https://apis.io/apis/weave/weave-hq-messaging-api/) — Two-way SMS/text messaging with patients.
+- [Weave Payments API](https://apis.io/apis/weave/weave-hq-payments-api/) — Weave Payments methods (text-to-pay, card-on-file).
+- [Weave Phone & Calls API](https://apis.io/apis/weave/weave-hq-phone-calls-api/) — VoIP call records, recordings, voicemails, and call queues.
+- [Weave Reviews API](https://apis.io/apis/weave/weave-hq-reviews-api/) — Review generation, reputation, and business listings.
+- [Weave Scheduling API](https://apis.io/apis/weave/weave-hq-scheduling-api/) — Appointments, appointment types, schedules, and calendar events.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Weave Agentic Access](https://apis.io/agentic-access/weave/weave-agentic-access/)
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [Weave Contacts API](https://apis.io/collections/weave/open-weave-contacts-api/)
+- [Weave Contacts Events API](https://apis.io/collections/weave/open-weave-events-api/)
+- [Weave Contacts Forms API](https://apis.io/collections/weave/open-weave-forms-api/)
+- [Weave API](https://apis.io/collections/weave/open-weave-hq/)
+- [Weave Contacts Messaging API](https://apis.io/collections/weave/open-weave-messaging-api/)
+- [Weave Contacts Payments API](https://apis.io/collections/weave/open-weave-payments-api/)
+- [Weave Contacts Phone & Calls API](https://apis.io/collections/weave/open-weave-phone-calls-api/)
+- [Weave Contacts Scheduling API](https://apis.io/collections/weave/open-weave-scheduling-api/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Weave Authentication](https://apis.io/security/weave/weave-authentication/)
+- [Weave Domain Security](https://apis.io/security/weave/weave-domain-security/)
+- [Weave Trust Center](https://apis.io/security/weave/weave-trust-center/)
+- [Weave Vulnerability Disclosure](https://apis.io/security/weave/weave-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Weave Scopes](https://apis.io/scopes/weave/weave-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Weave Plans Pricing](https://apis.io/plans/weave/weave-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Weave Rate Limits](https://apis.io/rate-limits/weave/weave-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Weave Finops](https://apis.io/finops/weave/weave-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.getweave.com/)
+- [Documentation](https://dp.getweave.com/docs)
+- [Pricing](https://www.getweave.com/pricing/)
+- [Sign up](https://www.getweave.com/demo/)
+- [Support](https://www.weavehelp.com/weavehelp/)
+- [Blog](https://www.getweave.com/resource-center/)
+- [Security](https://www.getweave.com/security/)
+- [Compliance](https://www.getweave.com/security/)
+- [Terms of service](https://www.getweave.com/legal/terms/)
+- [Privacy policy](https://www.getweave.com/legal/privacy/)
+- [GitHub](https://github.com/weave-lab)
+- [Status](https://status.getweave.com/)
+
+## API Evangelist rating
+
+**Kin Score 50.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 48.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 68.4 |
+
+**Agent readiness 26.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 41.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/weave/](https://apis.io/providers/weave/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Weave: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/weave/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
